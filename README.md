@@ -10,6 +10,6 @@ The robot can be controlled by sending simple JSON commands :
 Ex : {"X": 30, "Y":50} then {"P": 10000}
 
 ## NodeRed demo
-The demo on NodeRed (installed on a Raspberry Pi zero) allows to test and remote control the motors
+The demo on NodeRed (installed on a Raspberry Pi zero) allows to test and remote control the robot.\
 Sensors and advances automation sequences could be added to the flow to water several plants depending on soil moisture or add a camera with motion detection to make an anti-intrusion system or anything else.
  
