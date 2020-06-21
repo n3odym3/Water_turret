@@ -1,0 +1,244 @@
+[
+    {
+        "id": "dff7f8b0.05cc78",
+        "type": "mqtt out",
+        "z": "a4bfd403.801a78",
+        "name": "",
+        "topic": "ESP/water/turret/01",
+        "qos": "",
+        "retain": "",
+        "broker": "",
+        "x": 630,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ced9530d.85b19",
+        "type": "ui_slider",
+        "z": "a4bfd403.801a78",
+        "name": "",
+        "label": "X",
+        "tooltip": "",
+        "group": "1f81946d.35b18c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "X",
+        "min": 0,
+        "max": "135",
+        "step": 1,
+        "x": 290,
+        "y": 270,
+        "wires": [
+            [
+                "1d05ca40.8869d6"
+            ]
+        ]
+    },
+    {
+        "id": "cc0e2fba.750b4",
+        "type": "ui_slider",
+        "z": "a4bfd403.801a78",
+        "name": "",
+        "label": "Y",
+        "tooltip": "",
+        "group": "1f81946d.35b18c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "Y",
+        "min": "120",
+        "max": "0",
+        "step": 1,
+        "x": 290,
+        "y": 320,
+        "wires": [
+            [
+                "ab3dcef4.c14a1"
+            ]
+        ]
+    },
+    {
+        "id": "1d05ca40.8869d6",
+        "type": "function",
+        "z": "a4bfd403.801a78",
+        "name": "",
+        "func": "msg.payload ={\"X\":msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 270,
+        "wires": [
+            [
+                "dff7f8b0.05cc78"
+            ]
+        ]
+    },
+    {
+        "id": "ab3dcef4.c14a1",
+        "type": "function",
+        "z": "a4bfd403.801a78",
+        "name": "",
+        "func": "msg.payload ={\"Y\":msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "dff7f8b0.05cc78"
+            ]
+        ]
+    },
+    {
+        "id": "1347ed4b.ec1d73",
+        "type": "function",
+        "z": "a4bfd403.801a78",
+        "name": "Max",
+        "func": "msg.payload ={\"X\":95, \"Y\":0};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 420,
+        "wires": [
+            [
+                "dff7f8b0.05cc78"
+            ]
+        ]
+    },
+    {
+        "id": "e2bc92b5.ab1dd",
+        "type": "ui_button",
+        "z": "a4bfd403.801a78",
+        "name": "",
+        "group": "1f81946d.35b18c",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Max",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "1347ed4b.ec1d73"
+            ]
+        ]
+    },
+    {
+        "id": "cedf047e.792778",
+        "type": "ui_button",
+        "z": "a4bfd403.801a78",
+        "name": "",
+        "group": "1f81946d.35b18c",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Home",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 290,
+        "y": 460,
+        "wires": [
+            [
+                "2623c5d.0116e3a"
+            ]
+        ]
+    },
+    {
+        "id": "2623c5d.0116e3a",
+        "type": "function",
+        "z": "a4bfd403.801a78",
+        "name": "Home",
+        "func": "msg.payload ={\"X\":0, \"Y\":115};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 460,
+        "wires": [
+            [
+                "dff7f8b0.05cc78"
+            ]
+        ]
+    },
+    {
+        "id": "5009793a.184508",
+        "type": "ui_button",
+        "z": "a4bfd403.801a78",
+        "name": "",
+        "group": "1f81946d.35b18c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Inject",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "2000",
+        "payloadType": "num",
+        "topic": "",
+        "x": 290,
+        "y": 380,
+        "wires": [
+            [
+                "9029c984.f521b8"
+            ]
+        ]
+    },
+    {
+        "id": "9029c984.f521b8",
+        "type": "function",
+        "z": "a4bfd403.801a78",
+        "name": "",
+        "func": "msg.payload ={\"P\":msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "dff7f8b0.05cc78"
+            ]
+        ]
+    },
+    {
+        "id": "1f81946d.35b18c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Control",
+        "tab": "9784cade.1689d8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9784cade.1689d8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Turret",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    }
+]
