@@ -1,0 +1,2 @@
+# Dependency 
+- node-red-dashboard
