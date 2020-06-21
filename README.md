@@ -6,7 +6,7 @@ This water turret uses a WemoD1, two 9g servo motors, a Nema17 stepper motor (+D
 The robot can be controlled by sending simple JSON commands :
 - X axis : {"X": 0 to 180}
 - Y axis : {"Y": 0 to 180}
-- Pump : {"P" : steps (200 steps/rotation)}
+- Pump : {"P" : steps (200 steps/rotation)} \
 Ex : {"X": 30, "Y":50} then {"P": 10000}
 
 ## NodeRed demo
