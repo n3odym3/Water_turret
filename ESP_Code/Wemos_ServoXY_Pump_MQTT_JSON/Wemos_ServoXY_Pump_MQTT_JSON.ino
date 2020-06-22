@@ -9,9 +9,9 @@ Servo ServoX;
 Servo ServoY;
 
 #define RPM 200
-#define DIR 15//26
-#define STEP 13//25
-#define EN 5//17
+#define DIR 15// D8
+#define STEP 13// D7
+#define EN 5// D1
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -117,8 +117,8 @@ void setup() {
   client.setCallback(callback);
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW);
-  ServoX.attach(14); //D4
-  ServoY.attach(12); //D4
+  ServoX.attach(14); //D5
+  ServoY.attach(12); //D6
   Pump.begin(RPM);
   Pump.disable();
 
