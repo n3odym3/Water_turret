@@ -5,7 +5,7 @@
 This water turret uses a WemoD1, two 9g servo motors, a Nema17 stepper motor (+DRV8825 driver) and 3D printed parts to create a water turret that can be remotely controlled via MQTT and automatically aims and shoot water at different locations.
 
 ## Wiring
-<img src="https://github.com/n3odym3/Water_turret/blob/master/Img/Connections.PNG" width="60%">
+<img src="https://github.com/n3odym3/Water_turret/blob/master/Img/Connections.PNG" width="60%"> \
 - Servo 1 : D5 (GPIO 14)
 - Servo 2 : D6 (GPIO 12)
 - DIR : D8 (GPIO 15)
