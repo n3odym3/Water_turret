@@ -13,7 +13,7 @@ This water turret uses a WemoD1, two 9g servo motors, a Nema17 stepper motor (+D
 - 2x M3x13
 - 7mm silicone tube
 - P1000 micropipette Tip
-- 4x 10x1mm neodymium magnets
+- 4x 10x3mm neodymium magnets
 
 ## Wiring
 <img src="https://github.com/n3odym3/Water_turret/blob/master/Img/Connections.PNG" width="60%"> \
